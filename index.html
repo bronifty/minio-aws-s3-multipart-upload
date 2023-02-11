@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form id="upload-form" action="http://localhost:3000">
+    <input type="file" id="file-input">
+    <button type="submit">Upload</button>
+</form>
+
+<script>
+    const form = document.getElementById("upload-form");
+    const fileInput = document.getElementById("file-input");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const filename = fileInput.files[0].name;
+        const bucketName = "bucket-name";
+        const objectName = filename;
+        const accessKey = "YOUR_ACCESS_KEY";
+        const secretKey = "YOUR_SECRET_KEY";
+        const minioServer = "your-minio-server-host:9000";
+
+        const formData = new FormData();
+        formData.append("file", fileInput.files[0]);
+
+        const headers = new Headers();
+        headers.append("Authorization", `AWS ${accessKey}:${btoa(secretKey)}`);
+
+        const response = await fetch(`http://${minioServer}/${bucketName}/${objectName}`, {
+            method: "PUT",
+            headers,
+            body: formData
+        });
+
+        console.log(`File uploaded successfully with status code ${response.status}`);
+    });
+</script>
+
+</body>
+</html>
