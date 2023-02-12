@@ -17,6 +17,6 @@ npm i && npm start
 ### Posts
 - [blog](https://dev.to/bronifty/use-minio-for-aws-s3-multipart-upload-reference-implementation-in-nodejs-21h9)
 - [youtube](https://youtu.be/yNd7OelQAb4)
-- [github](https://github.com/bronifty/minio)
+
 
 
