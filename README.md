@@ -12,3 +12,10 @@ npm i && npm start
 - MinIO is a generic S3 client
     - If you omit args it will infer the types
 - [minio js docs examples](https://github.com/minio/minio-js/tree/master/examples)
+
+
+### Posts
+- [blog](https://dev.to/bronifty/use-minio-for-aws-s3-multipart-upload-reference-implementation-in-nodejs-21h9)
+- [youtube](https://youtu.be/yNd7OelQAb4)
+
+
