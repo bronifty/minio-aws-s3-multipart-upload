@@ -11,12 +11,8 @@ dotenv.config();
 
 app.use(express.static(path.join(process.cwd(), "public")));
 
-const bucket = "bronifty";
-// var s3Client = new Minio.Client({
-//   endPoint: "s3.amazonaws.com",
-//   accessKey: "AKIASC3HLN3B47KJOWAM",
-//   secretKey: "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",
-// });
+const bucket = process.env.AWS_S3_BUCKET;
+
 const s3Client = new Minio.Client({
   endPoint: "s3.amazonaws.com",
   accessKey: process.env.AWS_S3_ACCESS_KEY,
