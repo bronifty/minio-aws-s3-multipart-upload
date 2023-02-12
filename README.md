@@ -1,5 +1,7 @@
 # MinIO Reference Implementation
 
+- update your env.example to .env with AWS creds and bucket name
+
 ```shell
 npm i && npm start
 ```
